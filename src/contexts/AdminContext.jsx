@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useReducer } from 'react';
-import { JSON_API } from '../helpers/Constants';
+import { JSON_API } from '../helpers/constants';
 
 export const adminContext = React.createContext();
 
