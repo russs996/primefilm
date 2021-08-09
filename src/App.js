@@ -1,11 +1,11 @@
 import './App.css';
-import Crud from './Home/Crud';
+import Routes from './Routes';
 
 
 function App() {
   return (
     <div>
-      <Crud />
+      <Routes />
     </div>
   );
 }
