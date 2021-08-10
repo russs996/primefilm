@@ -1,4 +1,4 @@
-import { makeStyles, TextField } from '@material-ui/core';
+import { Grid, makeStyles, TextField } from '@material-ui/core';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
@@ -10,6 +10,13 @@ const useStyles = makeStyles({
     },
     divs: {
         width: '20%'
+        display: "flex",
+        marginBottom: "20px",
+    },
+//     divs: {
+//         width: '20%',
+//         textAlign: "center",
+//         flexDirection: "row"
     },
     buttonBlock: {
         marginBottom: "50px",
@@ -19,7 +26,12 @@ const useStyles = makeStyles({
         width: "10%",
         padding: "10px",
         background: "grey",
-        color: "white"}
+        color: "white",
+        alignItems: "center"
+    },
+    text1: {
+
+    }
 })
 
 
@@ -31,10 +43,10 @@ const Add = () => {
         country: "",
         yers: "",
         rating: "",
-        byPopularity: "",
         acters: "",
         category: "",
         image: "",
+        producer: ""
     })
 
     function handleInput(e) {
@@ -61,11 +73,11 @@ const Add = () => {
             yers: "",
             description: "",
             rating: "",
-            byPopularity: "",
             acters: "",
             category: "",
             image: "",
-            price: ""
+            price: "",
+            producer: ""
 
         })
     }
@@ -74,24 +86,30 @@ const Add = () => {
         <>
             <div className={classes.main}>
                 <div className={classes.divs}>
-                    <TextField value={newProduct.title} onChange={handleInput} name="title" id="standart-basic" label="Название фильма" />
-                    <TextField value={newProduct.country} onChange={handleInput} name="country" id="standart-basic" label="Страна" />
-                    <TextField value={newProduct.yers} onChange={handleInput} name="yers" id="standart-basic" label="Год" />
-                    <TextField value={newProduct.description} onChange={handleInput} name="description" id="standart-basic" label="Описание фильма" />
-                    <TextField value={newProduct.rating} onChange={handleInput} name="rating" id="standart-basic" label="Рейтинг" />
-                    <TextField value={newProduct.byPopularity} onChange={handleInput} name="byPopularity" id="standart-basic" label="По популярности" />
+                    <TextField className={classes.text1} value={newProduct.title} onChange={handleInput} name="title" id="standart-basic" label="Название фильма" />
+                    <TextField className={classes.text1} value={newProduct.country} onChange={handleInput} name="country" id="standart-basic" label="Страна" />
                 </div>
                 <div className={classes.divs}>
-                    <TextField value={newProduct.acters} onChange={handleInput} name="acters" id="standart-basic" label="Актеры" />
-                    <TextField value={newProduct.category} onChange={handleInput} name="category" id="standart-basic" label="Категория" />
-                    <TextField value={newProduct.image} onChange={handleInput} name="image" id="standart-basic" label="Фото заставки" />
-                    <TextField value={newProduct.price} onChange={handleInput} name="price" id="standart-basic" label="Цена" />
+                    <TextField className={classes.text1} value={newProduct.yers} onChange={handleInput} name="yers" id="standart-basic" label="Год" />
+                    <TextField className={classes.text1} value={newProduct.description} onChange={handleInput} name="description" id="standart-basic" label="Описание фильма" />
+                </div>
+                <div className={classes.divs}>
+                    <TextField className={classes.text1} value={newProduct.rating} onChange={handleInput} name="rating" id="standart-basic" label="Рейтинг" />
+                    <TextField className={classes.text1} value={newProduct.acters} onChange={handleInput} name="acters" id="standart-basic" label="Актеры" />
+                </div>
+                <div className={classes.divs}>
+                    <TextField className={classes.text1} value={newProduct.category} onChange={handleInput} name="category" id="standart-basic" label="Категория" />
+                    <TextField className={classes.text1} value={newProduct.image} onChange={handleInput} name="image" id="standart-basic" label="Фото заставки" />
+                </div>
+                <div className={classes.divs}>
+                    <TextField className={classes.text1} value={newProduct.price} onChange={handleInput} name="price" id="standart-basic" label="Цена" />
+                    <TextField className={classes.text1} value={newProduct.producer} onChange={handleInput} name="producer" id="standart-basic" label="Продюссер" />
                 </div>
             </div>
             <div className={classes.buttonBlock}>
                 <button onClick={handleClick} className={classes.button}>ADD</button>
             </div>
-        </>
+        </ >
     );
 };
 
