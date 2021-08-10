@@ -5,7 +5,21 @@ import { useContext } from 'react';
 import { adminContext } from '../../contexts/AdminContext'
 
 const useStyles = makeStyles({
-
+    main: {
+        marginBottom: "20px",
+    },
+    divs: {
+        width: '20%'
+    },
+    buttonBlock: {
+        marginBottom: "50px",
+        width: '100%'
+    },
+    button: {
+        width: "10%",
+        padding: "10px",
+        background: "grey",
+        color: "white"}
 })
 
 

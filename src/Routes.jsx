@@ -7,6 +7,7 @@ import Login from './components/Auth/Login'
 import Navbar from './components/Header/Navbar'
 import Home from './components/Home/Home'
 import AuthContextProvider from './contexts/AuthContext';
+import Footer from './components/Footer/Footer'
 
 
 const Routes = () => {
@@ -22,6 +23,7 @@ const Routes = () => {
                     <Route exact path="/admin" component={AdminPanel} />
                 </Switch>
             </AdminContextProvider>
+            <Footer />
         </BrowserRouter>
         </AuthContextProvider>
     );
