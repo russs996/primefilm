@@ -5,24 +5,28 @@ import AdminContextProvider from './contexts/AdminContext';
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
 import Navbar from './components/Header/Navbar'
-import Home from './components/Home/Home'
 import AuthContextProvider from './contexts/AuthContext';
+import HomeProvider from './components/Home/Home';
+import Home from './components/Home/Home';
+import ClientContextProvider from './contexts/ClientContext';
 
 
 const Routes = () => {
     return (
         <AuthContextProvider>
-        <BrowserRouter>
-            <Navbar/>
-            <AdminContextProvider>
-                <Switch>
-                    <Route exact path='/' component={Home} />
-                        <Route exact path="/login" component={Login}/>
-                        <Route exact path="/register" component={Register}/>
-                    <Route exact path="/admin" component={AdminPanel} />
-                </Switch>
-            </AdminContextProvider>
-        </BrowserRouter>
+            <BrowserRouter>
+                <Navbar />
+                <ClientContextProvider>
+                    <AdminContextProvider>
+                        <Switch>
+                            <Route exact path='/' component={Home} />
+                            <Route exact path="/login" component={Login} />
+                            <Route exact path="/register" component={Register} />
+                            <Route exact path="/admin" component={AdminPanel} />
+                        </Switch>
+                    </AdminContextProvider>
+                </ClientContextProvider>
+            </BrowserRouter>
         </AuthContextProvider>
     );
 };

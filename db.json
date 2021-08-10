@@ -1,3 +1,70 @@
 {
-  "products": []
+  "products": [
+    {
+      "title": "Star Wars",
+      "country": "USA",
+      "yers": "2008",
+      "description": "На передовых позициях межгалактической войны Добра и Зла – снова любимые герои: Анакин Скайуокер, Оби-Ван Кеноби и Падме Амидала, а также присоединившийся к ним падаван Анакина, Асока. Противостоящие им злодеи – Палпатин, граф Дуку и генерал Гривус – вынашивают план захвата Галактики. Начинается последняя схватка, и судьбы Вселенной вверены рыцарям-джедаям. Их подвиги станут самыми яркими эпизодами масштабных битв и подарят множество удивительных открытий.",
+      "rating": "7.8",
+      "byPopularity": "",
+      "acters": "Мэтт Лантер, Эшли Экштейн, Джеймс Арнольд Тейлор, Ди Брэдли Бейкер, Том Кэйн, Сэмюэл Л. Джексон, Энтони Дэниелс, Кристофер Ли, Ника Футтерман, Йен Эберкромби",
+      "category": "16+",
+      "image": "https://cdn.vox-cdn.com/thumbor/2idu_vDto8-ZaL491N8-v0H9lBY=/0x0:1878x964/1200x800/filters:focal(789x332:1089x632)/cdn.vox-cdn.com/uploads/chorus_image/image/69678765/Screen_Shot_2021_08_04_at_1.53.38_PM.0.png",
+      "price": 4,
+      "id": 1,
+      "producer": "Jorj Lucas"
+    },
+    {
+      "title": "Mortol Combat",
+      "country": "USA",
+      "yers": "2021",
+      "rating": "7.2",
+      "acters": " Льюис Тан, Джо Таслим, Джессика МакНэми, Джош Лоусон, Хироюки Санада, Мехкад Брукс, Луди Линь, Макс Хуан, Таданобу Асано, Чин Хань",
+      "category": "Fantasy",
+      "image": "https://image.api.playstation.com/vulcan/ap/rnd/202009/3023/kYTRYlKE7x4NA1ckFbLDJBp5.png",
+      "producer": "Saimon Mcoid",
+      "description": "Боец смешанных единоборств Коул Янг не раз соглашался проиграть за деньги. Он не знает о своем наследии и почему император Внешнего мира Шан Цзун посылает могущественного криомансера Саб-Зиро на охоту за Коулом. Янг боится за безопасность своей семьи, и майор спецназа Джакс, обладатель такой же отметки в виде дракона, как и у Коула, советует ему отправиться на поиски Сони Блейд. Вскоре Коул, Соня и наёмник Кано оказываются в храме Лорда Рейдена, Старшего Бога и защитника Земного царства, который дает убежище тем, кто носит метку. Здесь прибывшие тренируются с опытными воинами Лю Каном и Кун Лао, готовясь противостоять врагам из Внешнего мира, а для этого им нужно раскрыть в себе аркану – могущественную силу души.",
+      "price": 3,
+      "id": 2
+    },
+    {
+      "title": "Отряд самоубийц",
+      "country": "USA",
+      "yers": "2021",
+      "rating": "8.1",
+      "acters": "Идрис Эльба, Марго Робби, Джон Сина, Юэль Киннаман, Daniela Melchior, Питер Капальди, Давид Дастмалчян, Сильвестр Сталлоне, Виола Дэвис, Алиси Брага",
+      "category": "Fantasy",
+      "image": "https://cdn.igromania.ru/mnt/articles/6/6/3/a/a/1/31827/preview/f43c9681d6cce263_1920xH.jpg",
+      "producer": "James Gun",
+      "description": "Есть на земле одно гнилое место, откуда мечтают свалить даже самые отъявленные злодеи. Тюрьма Белль Рив – для преступников со сверхспособностями. Она же – ад. Она же – база рекрутов для суперсекретного проекта «Отряд самоубийц».",
+      "price": 3,
+      "id": 3
+    },
+    {
+      "title": "Venom",
+      "country": "USA",
+      "yers": "2018",
+      "rating": "7.3",
+      "acters": "Том Харди, Мишель Уильямс, Риз Ахмед, Скотт Хэйз, Рейд Скотт, Дженни Слейт, Мелора Уолтерс, Вуди Харрельсон, Пегги Лу, Malcolm C. Murray",
+      "category": "Fantasy, action",
+      "image": "https://www.film.ru/sites/default/files/movies/posters/28569082-1023571.jpg",
+      "producer": "Tom Hardi",
+      "description": "Что если в один прекрасный день в тебя вселяется существо-симбиот, которое наделяет тебя сверхчеловеческими способностями? Вот только Веном – симбиот совсем недобрый, и договориться с ним невозможно. Хотя нужно ли договариваться?.. Ведь в какой-то момент ты понимаешь, что быть плохим вовсе не так уж и плохо. Так даже веселее. В мире и так слишком много супергероев! Мы – Веном!",
+      "price": 5,
+      "id": 4
+    },
+    {
+      "title": "Avatar",
+      "country": "USA",
+      "yers": "2009",
+      "rating": "7.8",
+      "acters": " Сэм Уортингтон, Зои Салдана, Сигурни Уивер, Стивен Лэнг, Мишель Родригес, Джованни Рибизи, Джоэль Мур, Си Си Эйч Паундер, Уэс Стьюди, Лас Алонсо",
+      "category": "Fantasy",
+      "image": "data:image/jpeg;base64,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",
+      "producer": "James Kameron",
+      "description": "Бывший морпех Джейк Салли прикован к инвалидному креслу. Несмотря на немощное тело, Джейк в душе по-прежнему остается воином. Он получает задание совершить путешествие в несколько световых лет к базе землян на планете Пандора, где корпорации добывают редкий минерал, имеющий огромное значение для выхода Земли из энергетического кризиса.",
+      "price": 6,
+      "id": 5
+    }
+  ]
 }
