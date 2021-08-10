@@ -11,6 +11,7 @@ import HomeProvider from './components/Home/Home';
 import Home from './components/Home/Home';
 import ClientContextProvider from './contexts/ClientContext';
 
+console.log('asdasd')
 const Routes = () => {
     return (
         <AuthContextProvider>
