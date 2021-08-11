@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -13,6 +13,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShopIcon from '@material-ui/icons/Shop';
+import { useHistory } from 'react-router-dom';
+import { clientContext } from '../../contexts/ClientContext';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -79,6 +81,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+  const { getProducts } = useContext(clientContext)
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -102,6 +105,22 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const history = useHistory()
+
+
+  let search = new URLSearchParams(history.location.search)
+  const [searchWord, setSearchWord] = useState(search.get('q') || '')
+  function handleSearchInput(params, value) {
+    setSearchWord(value)
+    search.set(params, value)
+    search.set("_search", 1)
+    history.push(`${history.location.pathname}?${search.toString()}`)
+  }
+  useEffect(() => {
+    getProducts(history)
+  }, [searchWord])
+
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -163,7 +182,7 @@ export default function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <AppBar position="static">
-        <Toolbar style={{backgroundColor: '#000'}}>
+        <Toolbar style={{ backgroundColor: '#000' }}>
           <Typography className={classes.title} variant="h6" noWrap>
             PrimeFilm
           </Typography>
@@ -172,6 +191,7 @@ export default function PrimarySearchAppBar() {
               <SearchIcon />
             </div>
             <InputBase
+              onChange={(e) => handleSearchInput('q', e.target.value)}
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,

@@ -15,8 +15,8 @@ const Routes = () => {
     return (
         <AuthContextProvider>
             <BrowserRouter>
-                <Navbar />
                 <ClientContextProvider>
+                    <Navbar />
                     <AdminContextProvider>
                         <Switch>
                             <Route exact path='/' component={Home} />
@@ -26,7 +26,7 @@ const Routes = () => {
                         </Switch>
                     </AdminContextProvider>
                 </ClientContextProvider>
-            <Footer />
+                <Footer />
             </BrowserRouter>
         </AuthContextProvider>
     );

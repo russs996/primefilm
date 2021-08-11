@@ -13,10 +13,10 @@ const useStyles = makeStyles({
         display: "flex",
         marginBottom: "20px",
     },
-//     divs: {
-//         width: '20%',
-//         textAlign: "center",
-//         flexDirection: "row"
+    //     divs: {
+    //         width: '20%',
+    //         textAlign: "center",
+    //         flexDirection: "row"
     // },
     buttonBlock: {
         marginBottom: "50px",
