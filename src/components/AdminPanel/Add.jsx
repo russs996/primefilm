@@ -9,15 +9,15 @@ const useStyles = makeStyles({
         marginBottom: "20px",
     },
     divs: {
-        width: '20%'
+        width: '20%',
         display: "flex",
         marginBottom: "20px",
     },
-//     divs: {
-//         width: '20%',
-//         textAlign: "center",
-//         flexDirection: "row"
-    },
+    //     divs: {
+    //         width: '20%',
+    //         textAlign: "center",
+    //         flexDirection: "row"
+    // },
     buttonBlock: {
         marginBottom: "50px",
         width: '100%'

@@ -25,8 +25,11 @@ const reducer = (state = INIT_STATE, action) => {
 const ClientContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
-    const getProducts = async () => {
-        const { data } = await axios(`${JSON_API}`)
+    const getProducts = async (history) => {
+        const search = new URLSearchParams(window.location.search)
+        search.set('_limit', 8)
+        history ? history.push(`${history.location.pathname}?${search.toString()}`) : console.log(null);
+        const { data } = await axios(`${JSON_API}?_limit=8&${window.location.search}`)
         dispatch({
             type: "GET_PRODUCTS",
             payload: data
