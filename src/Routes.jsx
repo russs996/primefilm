@@ -7,7 +7,6 @@ import Login from './components/Auth/Login'
 import Navbar from './components/Header/Navbar'
 import AuthContextProvider from './contexts/AuthContext';
 import Footer from './components/Footer/Footer'
-import HomeProvider from './components/Home/Home';
 import Home from './components/Home/Home';
 import ClientContextProvider from './contexts/ClientContext';
 
