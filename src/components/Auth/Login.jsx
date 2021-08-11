@@ -108,8 +108,8 @@ export default function Login() {
             </Grid>
             </form>
         </div>
-        <Box mt={8}>
-            <Copyright />
+        <Box mt={12}>
+            {/* <Copyright /> */}
         </Box>
         </Container>
   );
