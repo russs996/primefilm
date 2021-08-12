@@ -1,8 +1,10 @@
+import { Grid } from '@material-ui/core';
 import List from './List';
 import { Pagination } from '@material-ui/lab';
 import { useHistory } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { clientContext } from '../../contexts/ClientContext';
+import Sidebar from './Sidebar';
 
 const Home = () => {
     const history = useHistory()
@@ -27,9 +29,10 @@ const Home = () => {
 
     return (
         <div>
-            <div>
+            <Grid>
+                <Sidebar />
                 <List />
-            </div>
+            </Grid>
             <Pagination count={paginatedPages} page={+page} onChange={handlePage} shape="rounded" />
         </div>
     );

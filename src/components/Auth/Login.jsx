@@ -15,6 +15,7 @@ import { useContext } from 'react';
 import { authContext } from '../../contexts/AuthContext';
 
 function Copyright() {
+    
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
@@ -54,7 +55,7 @@ export default function Login() {
         <CssBaseline />
         <div className={classes.paper} >
             <Typography component="h1" variant="h5">
-            Sign in
+            Войти
             </Typography>
             <form onSubmit={(e) => loginUser(e, history)} className={classes.form} noValidate>
             <TextField
@@ -63,7 +64,7 @@ export default function Login() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email адресс"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -75,7 +76,7 @@ export default function Login() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Пароль"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -83,7 +84,7 @@ export default function Login() {
             />
             <FormControlLabel
                 control={<Checkbox value="remember" style={{color: 'black'}}/>}
-                label="Remember me"
+                label="Запомни меня"
             />
             <Button
                 type="submit"
@@ -92,7 +93,7 @@ export default function Login() {
                 style={{backgroundColor: 'white'}}
                 className={classes.submit}
             >
-                Sign In
+                Войти
             </Button>
             <Grid container>
                 <Grid item xs>
@@ -102,7 +103,7 @@ export default function Login() {
                 </Grid>
                 <Grid item>
                 <Link href="/register" variant="body2" style={{color: 'blue'}}>
-                    {"Don't have an account? Sign Up"}
+                    {"Нету аккаунта? Зарегистрируйся"}
                 </Link>
                 </Grid>
             </Grid>
