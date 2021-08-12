@@ -29,7 +29,7 @@ const Cart = () => {
         getCart()
     }, [])
     return (
-        <TableContainer component={Paper} className={classes.paper}>
+        <TableContainer component={Paper} className={classes.paper} style={{heigth: '100vh'}}>
       <Table className={classes.table} aria-label="spanning table">
         <TableHead>
           <TableRow>
@@ -45,7 +45,7 @@ const Cart = () => {
                 <>
                     {cart.products.map((elem) => (
                     <TableRow key={elem.item.id}>
-                        <TableCell><img style={{width: "50px"}} src={elem.item.images} alt={elem.item.title}/></TableCell>
+                        <TableCell><img style={{width: "50px"}} src={elem.item.image} alt={elem.item.title}/></TableCell>
                         <TableCell align="right">{elem.item.title}</TableCell>
                         <TableCell align="right">{elem.item.price}</TableCell>
                         <TableCell align="right">
