@@ -35,7 +35,7 @@ const AddTable = () => {
                         <TableCell align="right">Цена</TableCell>
                         <TableCell align="right">Актеры</TableCell>
                         <TableCell align="right">Год</TableCell>
-                        <TableCell align="right">Продюссер</TableCell>
+                        <TableCell align="right">Фильм</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -60,7 +60,7 @@ const AddTable = () => {
                                                             <TableCell align="right">{product.price}</TableCell>
                                                             <TableCell align="right">{product.acters}</TableCell>
                                                             <TableCell align="right">{product.yers}</TableCell>
-                                                            <TableCell align="right">{product.producer}</TableCell>
+                                                            <TableCell align="right"> <source url={product.movie} /> </TableCell>
                                                         </TableRow>
                                                     )
                                                 }

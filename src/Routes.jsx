@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer'
 import HomeProvider from './components/Home/Home';
 import Home from './components/Home/Home';
 import ClientContextProvider from './contexts/ClientContext';
+import ProdDetail from './components/ProdDetail/ProdDetail';
 
 console.log('asdasd')
 const Routes = () => {
@@ -24,6 +25,7 @@ const Routes = () => {
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/admin" component={AdminPanel} />
+                            <Route exact path="/product-detail/:id" component={ProdDetail} />
                         </Switch>
                     </AdminContextProvider>
                 </ClientContextProvider>
