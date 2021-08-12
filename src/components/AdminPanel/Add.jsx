@@ -7,17 +7,14 @@ import { adminContext } from '../../contexts/AdminContext'
 const useStyles = makeStyles({
     main: {
         marginBottom: "20px",
+        display: 'flex',
+        justifyContent: "space-between"
     },
     divs: {
+        flexDirection: "column",
         width: '20%',
-        display: "flex",
         marginBottom: "20px",
     },
-    //     divs: {
-    //         width: '20%',
-    //         textAlign: "center",
-    //         flexDirection: "row"
-    // },
     buttonBlock: {
         marginBottom: "50px",
         width: '100%'
@@ -29,9 +26,6 @@ const useStyles = makeStyles({
         color: "white",
         alignItems: "center"
     },
-    text1: {
-
-    }
 })
 
 

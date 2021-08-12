@@ -8,7 +8,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 
 const useStyles = makeStyles({
   root: {
-    width: '100%',
+    bottom: 0,
+    width: '100%'
   },
 });
 

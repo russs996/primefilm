@@ -13,7 +13,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShopIcon from '@material-ui/icons/Shop';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { clientContext } from '../../contexts/ClientContext';
 
 const useStyles = makeStyles((theme) => ({
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PrimarySearchAppBar() {
-  const { getProducts } = useContext(clientContext)
+  const { getProducts, cartLength, getCartLength } = useContext(clientContext)
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -133,8 +133,18 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <Link to='/login' style={{
+            textDecoration:"none",
+            color:"black"
+          }}>
+        <MenuItem onClick={handleMenuClose}>Войти</MenuItem>
+        </Link>
+      <Link to='/register' style={{
+            textDecoration:"none",
+            color:"black"
+          }}>
+        <MenuItem onClick={handleMenuClose}>Зарегистрироваться</MenuItem>
+        </Link>
     </Menu>
   );
 
@@ -150,11 +160,11 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <ShopIcon />
-          </Badge>
-        </IconButton>
+          <IconButton aria-label="show 4 new mails" color="inherit">
+            <Badge badgeContent={4} color="secondary">
+              <ShopIcon />
+            </Badge>
+          </IconButton>
         <p>Messages</p>
       </MenuItem>
       <MenuItem>
@@ -183,9 +193,14 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar style={{ backgroundColor: '#000' }}>
+          <Link to="/" style={{
+            textDecoration:"none",
+            color:"white"
+          }}> 
           <Typography className={classes.title} variant="h6" noWrap>
             PrimeFilm
           </Typography>
+          </Link>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -202,11 +217,13 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+              <Link to="/cart" style={{color: "white"}} >
             <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={cartLength} color="secondary">
                 <ShopIcon />
               </Badge>
             </IconButton>
+            </Link>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />

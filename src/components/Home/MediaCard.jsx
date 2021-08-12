@@ -15,10 +15,13 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        maxWidth: 300,
+        marginTop: 20,
+        marginBottom: 20,
+        backgroundColor: 'black'
     },
     media: {
-        height: 140,
+        height: 250,
         backgroundSize: 'contain'
     },
 });
@@ -26,7 +29,7 @@ const useStyles = makeStyles({
 
 export default function MediaCard({ product }) {
     const classes = useStyles();
-    const { addAndDeleteProductInCart, checkProductInCart } = useContext(clientContext)
+    const { addProductInCart, checkProductInCart } = useContext(clientContext)
     return (
         <Card className={classes.root}>
             <Link to={`/product-detail/${product.id}`}>
@@ -53,10 +56,13 @@ export default function MediaCard({ product }) {
                 <Button variant="contained" color="primary">
                     Buy
                 </Button>
-                {/* <IconButton variant="contained" color={checkProductInCart(product.id) ? "secondary" : "primary"} onClick={() => addAndDeleteProductInCart(product)}>
-
+                <IconButton 
+                    aria-label="share"
+                    onClick={() => addProductInCart(product)}
+                    color={checkProductInCart(product.id) ? "secondary" : "inherit"}
+                    >
                     <ShoppingCart />
-                </IconButton> */}
+                </IconButton>
             </CardActions>
         </Card>
     );

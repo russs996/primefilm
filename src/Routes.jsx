@@ -9,6 +9,7 @@ import AuthContextProvider from './contexts/AuthContext';
 import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home';
 import ClientContextProvider from './contexts/ClientContext';
+import Cart from './components/Cart/Cart';
 
 console.log('asdasd')
 const Routes = () => {
@@ -20,13 +21,15 @@ const Routes = () => {
                     <AdminContextProvider>
                         <Switch>
                             <Route exact path='/' component={Home} />
+                            <Route exact path="/admin" component={AdminPanel} />
+                            <Route exact path='/cart' component={Cart} />
+
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/register" component={Register} />
-                            <Route exact path="/admin" component={AdminPanel} />
                         </Switch>
                     </AdminContextProvider>
                 </ClientContextProvider>
-                <Footer />
+            <Footer />
             </BrowserRouter>
         </AuthContextProvider>
     );

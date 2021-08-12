@@ -11,7 +11,7 @@ const List = () => {
         getProducts()
     }, [])
     return (
-        <Grid container justify="space-evenly" margin="10px 0" className="list">
+        <Grid container justify="space-evenly" margin="10px 0" className="list" style={{position:'relative'}}>
             {
                 products ? (
                     products.length ? (
