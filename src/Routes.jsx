@@ -11,7 +11,7 @@ import Home from './components/Home/Home';
 import ClientContextProvider from './contexts/ClientContext';
 import ProdDetail from './components/ProdDetail/ProdDetail';
 import Cart from './components/Cart/Cart';
-import { CreditCard } from '@material-ui/icons';
+
 
 console.log('asdasd')
 const Routes = () => {
@@ -30,7 +30,6 @@ const Routes = () => {
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/admin" component={AdminPanel} />
                             <Route exact path="/product-detail/:id" component={ProdDetail} />
-                            <Route exact path="/card" component={CreditCard} />
                         </Switch>
                     </AdminContextProvider>
                 </ClientContextProvider>

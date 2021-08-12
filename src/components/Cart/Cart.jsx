@@ -71,7 +71,7 @@ const Cart = () => {
             }
           </TableRow>
           <TableRow >
-            <Link to="/card">
+            <Link to="pay-card">
               <TableCell colSpan={3} align="right">
                 <Button variant="contained" color="primary">BUY</Button>
               </TableCell>

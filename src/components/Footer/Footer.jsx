@@ -25,11 +25,11 @@ export default function SimpleBottomNavigation() {
       }}
       showLabels
       className={classes.root}
-      style={{backgroundColor: '#000'}}
+      style={{ backgroundColor: '#000' }}
     >
-      <BottomNavigationAction label="Instagram" style={{color: 'white'}} icon={<InstagramIcon style={{color: 'white'}}/>} />
-      <BottomNavigationAction label="Youtube" style={{color: 'white'}} icon={<YouTubeIcon style={{color: 'white'}}/>} />
-      <BottomNavigationAction label="Twitter" style={{color: 'white'}} icon={<TwitterIcon style={{color: 'white'}}/>} />
+      <BottomNavigationAction label="Instagram" style={{ color: 'white' }} icon={<InstagramIcon style={{ color: 'white' }} />} />
+      <BottomNavigationAction label="Youtube" style={{ color: 'white' }} icon={<YouTubeIcon style={{ color: 'white' }} />} />
+      <BottomNavigationAction label="Twitter" style={{ color: 'white' }} icon={<TwitterIcon style={{ color: 'white' }} />} />
     </BottomNavigation>
   );
 }
