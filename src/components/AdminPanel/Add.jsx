@@ -41,8 +41,7 @@ const Add = () => {
         acters: "",
         category: "",
         image: "",
-        movie: "",
-
+        movie: ""
     })
 
     function handleInput(e) {
