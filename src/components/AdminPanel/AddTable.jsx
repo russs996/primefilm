@@ -23,7 +23,7 @@ const AddTable = () => {
 
 
     return (
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} style={{ backgroundColor: 'darkgray', marginBottom: '70px' }}>
             <Table size="small" aria-label="a dense table">
                 <TableHead>
                     <TableRow>
@@ -33,7 +33,6 @@ const AddTable = () => {
                         <TableCell align="left">Фото заставки</TableCell>
                         <TableCell align="left">Описание фильма</TableCell>
                         <TableCell align="left">Цена</TableCell>
-                        <TableCell align="left">Актеры</TableCell>
                         <TableCell align="left">Год</TableCell>
                         <TableCell align="left">Фильм</TableCell>
                     </TableRow>
@@ -46,7 +45,7 @@ const AddTable = () => {
                                 {
                                     products.length ? (
                                         products.map(product => (
-                                            <React.Fragment key={product.id}>
+                                            <React.Fragment key={product.id} style={{ marginBottom: '100px' }}>
                                                 {
                                                     changeId === product.id ? (
                                                         <Edit setChangeId={setChangeId} />
@@ -58,7 +57,6 @@ const AddTable = () => {
                                                             <TableCell align="left"> <img width="100" src={product.image} /> </TableCell>
                                                             <TableCell align="left">{product.description}</TableCell>
                                                             <TableCell align="left">{product.price}</TableCell>
-                                                            <TableCell align="left">{product.acters}</TableCell>
                                                             <TableCell align="left">{product.yers}</TableCell>
                                                             <TableCell align="left"> <source url={product.movie} /> </TableCell>
                                                         </TableRow>

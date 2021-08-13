@@ -35,7 +35,7 @@ const Home = () => {
                 <Sidebar />
                 <List />
             </Grid>
-            <Pagination count={paginatedPages} page={+page} onChange={handlePage} shape="rounded" />
+            <Pagination count={paginatedPages} page={+page} onChange={handlePage} shape="rounded" style={{ marginBottom: '80px', display: 'flex', justifyContent: 'center' }} />
         </div>
     );
 };

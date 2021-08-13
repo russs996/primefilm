@@ -18,29 +18,24 @@ const ProdDetail = () => {
     return (
         <div>
             <>
-                <Paper elevation={3} >
-                    <Typography variant='h2' style={{ textAlign: 'center' }}>Better than Netflix</Typography>
+                <Paper style={{ backgroundColor: 'darkgray' }}>
                     {
                         productDetail ? (
                             <div >
-                                <div>
-                                    <img style={{ width: '300px' }} src={productDetail.image} alt="" />
-
-                                </div>
                                 <div style={{
-                                    width: '200px',
-                                    // display: 'flex',
-                                    // flexWrap: 'wrap',
-                                    // alignItems: 'center'
+                                    display: 'flex',
+                                    flexWrap: 'wrap'
+
                                 }}>
-                                    <Typography variant='h3' gutterBottom>{productDetail.title}</Typography>
-                                    <Typography variant='subtitle1' gutterBottom>{productDetail.category}</Typography>
-                                    <Typography variant='body1' gutterBottom>{productDetail.description}</Typography>
-                                    <Typography variant='h4' gutterBottom>${productDetail.price}</Typography>
-                                    <ReactPlayer controls={true} url={productDetail.movie} />
+                                    <img style={{ marginTop: '100px', marginLeft: '20px', width: '250px', position: 'absolute' }} src={productDetail.image} alt="" />
+                                    <div style={{ marginTop: '100px', marginLeft: '300px' }}>
+                                        <Typography variant='h3' gutterBottom>{productDetail.title}</Typography>
+                                        <Typography variant='h6' gutterBottom>Жанры:{productDetail.category}</Typography>
+                                        <Typography variant='body1' gutterBottom>Описание:<br />{productDetail.description}</Typography>
+                                        <ReactPlayer style={{ display: 'flex', justifyContent: 'center', marginTop: '120px', marginBottom: '70px' }} controls={true} url={productDetail.movie} />
+                                    </div>
                                 </div>
                             </div>
-
                         ) : (<h1>Loading...</h1>)
                     }
                 </Paper>

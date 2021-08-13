@@ -6,6 +6,7 @@ import { adminContext } from '../../contexts/AdminContext'
 
 const useStyles = makeStyles({
     main: {
+        marginTop: '65px',
         marginBottom: "20px",
         display: 'flex',
         justifyContent: "space-between"

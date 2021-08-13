@@ -11,19 +11,34 @@ const DUMMY_VIDEOS = [
     videoUrl: 'https://youtu.be/-LkHS8geUjQ'
   },
   {
-    _id: '5fd025a181e2c80897c14ae1',
-    videoUrl: 'https://youtu.be/-LkHS8geUjQ'
+    _id: '5fd025a181e2c80897c14ae2',
+    videoUrl: 'https://youtu.be/Q6nepw3fskg'
+  },
+  {
+    _id: '5fd025a181e2c80897c14ae2',
+    videoUrl: 'https://youtu.be/jLMBLuGJTsA'
+  },
+  {
+    _id: '5fd025a181e2c80897c14ae2',
+    videoUrl: 'https://youtu.be/ASih5a8F78A'
+  },
+  {
+    _id: '5fd025a181e2c80897c14ae2',
+    videoUrl: 'https://youtu.be/DdJhScsJCDI'
   }
 ];
 
 const useStyles = makeStyles(theme => ({
   carousel: {
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
+    marginTop: '100px',
+    width: '95vw',
+    height: '85vh'
   }
 }));
 
 const YoutubeSlide = ({ url, isSelected }) => (
-  <ReactPlayer width="100%" height="276px" url={url} playing={isSelected} controls />
+  <ReactPlayer width='100%' height="420px" url={url} playing={isSelected} controls='controls' />
 );
 
 const CarouselVideo = ({ data }) => {

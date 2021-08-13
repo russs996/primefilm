@@ -17,9 +17,10 @@ import AOS from 'aos'
 const useStyles = makeStyles({
     root: {
         maxWidth: 300,
+        height: 420,
         marginTop: 20,
-        marginBottom: 20,
-        backgroundColor: 'black'
+        marginBottom: 50,
+        backgroundColor: 'darkgrey'
     },
     media: {
         height: 250,
@@ -38,31 +39,29 @@ export default function MediaCard({ product }) {
     }, []);
     return (
         <div data-aos="zoom-in">
-            <Card className={classes.root}>
-                <Link to={`/product-detail/${product.id}`}>
-                    <CardActionArea>
+            <Card className={classes.root} >
+                <Link to={`/product-detail/${product.id}`} style={{ textDecoration: 'none' }}>
+                    <CardActionArea >
+                        <Typography variant="body2" color="textSecondary" component="p" style={{ position: 'absolute' }}>
+                            {product.yers}
+                        </Typography>
                         <CardMedia
                             className={classes.media}
                             image={product.image}
                             style={{ width: "300px" }}
                         />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
+                        <CardContent style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+                            <Typography gutterBottom variant="h5" component="h2" style={{ color: 'black' }} >
                                 {product.title}
                             </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {product.yers}
-                            </Typography>
+
                         </CardContent>
                     </CardActionArea>
                 </Link>
-                <CardActions>
+                <CardActions style={{ bottom: '0', display: 'flex', justifyContent: 'space-between' }}>
                     <Typography gutterBottom component="h4">
                         {product.price} $
                     </Typography>
-                    <Button variant="contained" color="primary">
-                        Buy
-                    </Button>
                     <IconButton
                         aria-label="share"
                         onClick={() => addProductInCart(product)}

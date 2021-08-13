@@ -13,7 +13,8 @@ import { clientContext } from '../../contexts/ClientContext';
 const useStyles = makeStyles(theme => ({
     paper: {
         padding: theme.spacing(2),
-        color: theme.palette.text.secondary,
+        color: 'f2f2f2',
+        backgroundColor: 'darkgrey',
         // width: '1440px'
         width: '93vw',
         margin: '20px'
@@ -78,7 +79,7 @@ const Sidebar = () => {
                     </RadioGroup>
                 </FormControl>
                 <Grid>
-                    <Button variant='outlined' color='primary' onClick={handleDrop} >Сброс</Button>
+                    <Button variant='outlined' onClick={handleDrop} style={{ color: 'f2f2f2' }} >Сброс</Button>
                 </Grid>
             </Paper>
         </Grid>

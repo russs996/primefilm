@@ -15,6 +15,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import ShopIcon from '@material-ui/icons/Shop';
 import { Link, useHistory } from 'react-router-dom';
 import { clientContext } from '../../contexts/ClientContext';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+// import jwt_decode from "jwt-decode"
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -86,6 +88,19 @@ export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
+  const admin = 'adminadmin@gmail.com'
+
+  const [isAdmin, setIsAdmin] = useState(false)
+
+  useEffect(() => {
+    let user = localStorage.getItem('user')
+    if (user) {
+      if (user === admin) {
+        setIsAdmin(true)
+      }
+    }
+  }, [])
+
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -134,17 +149,17 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <Link to='/login' style={{
-            textDecoration:"none",
-            color:"black"
-          }}>
+        textDecoration: "none",
+        color: "black"
+      }}>
         <MenuItem onClick={handleMenuClose}>Войти</MenuItem>
-        </Link>
+      </Link>
       <Link to='/register' style={{
-            textDecoration:"none",
-            color:"black"
-          }}>
+        textDecoration: "none",
+        color: "black"
+      }}>
         <MenuItem onClick={handleMenuClose}>Зарегистрироваться</MenuItem>
-        </Link>
+      </Link>
     </Menu>
   );
 
@@ -160,18 +175,18 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-          <IconButton aria-label="show 4 new mails" color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <ShopIcon />
-            </Badge>
-          </IconButton>
+        <IconButton aria-label="show 4 new mails" color="inherit">
+          <Badge badgeContent={4} color="secondary">
+            <ShopIcon />
+          </Badge>
+        </IconButton>
         <p>Messages</p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
+          {/* <Badge badgeContent={11} color="secondary"> */}
+          <SupervisorAccountIcon />
+          {/* </Badge> */}
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
@@ -190,16 +205,16 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="static">
+    <div className={classes.grow} >
+      <AppBar position="fixed">
         <Toolbar style={{ backgroundColor: '#000' }}>
           <Link to="/" style={{
-            textDecoration:"none",
-            color:"white"
-          }}> 
-          <Typography className={classes.title} variant="h6" noWrap>
-            PrimeFilm
-          </Typography>
+            textDecoration: "none",
+            color: "white"
+          }}>
+            <Typography className={classes.title} variant="h6" noWrap>
+              PrimeFilm
+            </Typography>
           </Link>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -217,18 +232,22 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-              <Link to="/cart" style={{color: "white"}} >
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={cartLength} color="secondary">
-                <ShopIcon />
-              </Badge>
-            </IconButton>
+            <Link to="/cart" style={{ color: "white" }} >
+              <IconButton aria-label="show 4 new mails" color="inherit">
+                <Badge badgeContent={cartLength} color="secondary">
+                  <ShopIcon />
+                </Badge>
+              </IconButton>
             </Link>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <Link to='/admin'>
+              {
+                isAdmin ? (
+                  <IconButton aria-label="show 17 new notifications" color="inherit" style={{ color: 'white' }}>
+                    <SupervisorAccountIcon />
+                  </IconButton>
+                ) : (null)
+              }
+            </Link>
             <IconButton
               edge="end"
               aria-label="account of current user"

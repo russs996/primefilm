@@ -30,7 +30,7 @@ const Cart = () => {
     getCart()
   }, [])
   return (
-    <TableContainer component={Paper} className={classes.paper} style={{ heigth: '100vh' }}>
+    <TableContainer component={Paper} className={classes.paper} style={{ heigth: '100vh', marginTop: '100px' }}>
       <Table className={classes.table} aria-label="spanning table">
         <TableHead>
           <TableRow>
