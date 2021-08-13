@@ -35,7 +35,7 @@ const CarouselVideo = ({ data }) => {
     <item.type {...item.props} {...props} />
   );
 
-  const getVideoThumb = videoId =>`https://img.youtube.com/vi/${videoId}/default.jpg`;
+  // const getVideoThumb = videoId =>`https://img.youtube.com/vi/${videoId}/default.jpg`;
 
   const getVideoId = url =>url.substr('https://www.youtube.com/watch?v='.length, url.length);
 
@@ -43,7 +43,7 @@ const CarouselVideo = ({ data }) => {
     children.map(item => {
       const videoId = getVideoId(item.props.url);
   
-      return <img key={videoId} src={getVideoThumb(videoId)} />;
+      // return <img key={videoId} src={getVideoThumb(videoId)} />;
   });
 
   return (
@@ -56,8 +56,8 @@ const CarouselVideo = ({ data }) => {
        showThumbs={true}
        showStatus={false}
        infiniteLoop={true}
-       renderItem={customRenderItem}
-       renderThumbs={customRenderThumb}
+      //  renderItem={customRenderItem}
+      //  renderThumbs={customRenderThumb}
      >
       {data.map(v => (
         <YoutubeSlide
