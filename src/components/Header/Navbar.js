@@ -15,6 +15,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import ShopIcon from '@material-ui/icons/Shop';
 import { Link, useHistory } from 'react-router-dom';
 import { clientContext } from '../../contexts/ClientContext';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import jwt_decode from "jwt-decode"
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -85,6 +87,19 @@ export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const admin = 'adminadmin@gmail.com'
+
+  const [ isAdmin, setIsAdmin] = useState(false)
+
+  useEffect(() => {
+    let user = localStorage.getItem('user')
+    if(user){
+      if(user === admin){
+        setIsAdmin(true)
+      }
+    }
+  }, [])
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -169,9 +184,9 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
+          {/* <Badge badgeContent={11} color="secondary"> */}
+            <SupervisorAccountIcon />
+          {/* </Badge> */}
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
@@ -224,11 +239,15 @@ export default function PrimarySearchAppBar() {
               </Badge>
             </IconButton>
             </Link>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+              <Link to='/admin'>
+              {
+                isAdmin ? (
+                    <IconButton aria-label="show 17 new notifications" color="inherit" style={{color: 'white'}}>
+                      <SupervisorAccountIcon />
+                    </IconButton>
+                ) : (null)
+              }
+            </Link>
             <IconButton
               edge="end"
               aria-label="account of current user"
