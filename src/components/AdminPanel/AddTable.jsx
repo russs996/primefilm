@@ -30,12 +30,12 @@ const AddTable = () => {
                         <TableCell>#</TableCell>
                         <TableCell>#</TableCell>
                         <TableCell>Название фильма</TableCell>
-                        <TableCell align="right">Фото заставки</TableCell>
-                        <TableCell align="right">Описание фильма</TableCell>
-                        <TableCell align="right">Цена</TableCell>
-                        <TableCell align="right">Актеры</TableCell>
-                        <TableCell align="right">Год</TableCell>
-                        <TableCell align="right">Фильм</TableCell>
+                        <TableCell align="left">Фото заставки</TableCell>
+                        <TableCell align="left">Описание фильма</TableCell>
+                        <TableCell align="left">Цена</TableCell>
+                        <TableCell align="left">Актеры</TableCell>
+                        <TableCell align="left">Год</TableCell>
+                        <TableCell align="left">Фильм</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -52,15 +52,15 @@ const AddTable = () => {
                                                         <Edit setChangeId={setChangeId} />
                                                     ) : (
                                                         <TableRow >
-                                                            <TableCell align="right"> <button onClick={() => deleteProduct(product.id)}>DEL</button> </TableCell>
-                                                            <TableCell align="right"> <button onClick={() => handleEditChange(product.id)}>EDIT</button> </TableCell>
+                                                            <TableCell align="left"> <button onClick={() => deleteProduct(product.id)}>DEL</button> </TableCell>
+                                                            <TableCell align="left"> <button onClick={() => handleEditChange(product.id)}>EDIT</button> </TableCell>
                                                             <TableCell component="th" scope="row">{product.title}</TableCell>
-                                                            <TableCell align="right"> <img width="100" src={product.image} /> </TableCell>
-                                                            <TableCell align="right">{product.description}</TableCell>
-                                                            <TableCell align="right">{product.price}</TableCell>
-                                                            <TableCell align="right">{product.acters}</TableCell>
-                                                            <TableCell align="right">{product.yers}</TableCell>
-                                                            <TableCell align="right"> <source url={product.movie} /> </TableCell>
+                                                            <TableCell align="left"> <img width="100" src={product.image} /> </TableCell>
+                                                            <TableCell align="left">{product.description}</TableCell>
+                                                            <TableCell align="left">{product.price}</TableCell>
+                                                            <TableCell align="left">{product.acters}</TableCell>
+                                                            <TableCell align="left">{product.yers}</TableCell>
+                                                            <TableCell align="left"> <source url={product.movie} /> </TableCell>
                                                         </TableRow>
                                                     )
                                                 }

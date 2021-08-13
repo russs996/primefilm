@@ -92,7 +92,7 @@ const Add = () => {
                     <TextField className={classes.text1} value={newProduct.acters} onChange={handleInput} name="acters" id="standart-basic" label="Актеры" />
                 </div>
                 <div className={classes.divs}>
-                    <TextField className={classes.text1} value={newProduct.category} onChange={handleInput} name="category" id="standart-basic" label="Категория" />
+                    <TextField className={classes.text1} value={newProduct.category} onChange={handleInput} name="category" id="standart-basic" label="Жанр" />
                     <TextField className={classes.text1} value={newProduct.image} onChange={handleInput} name="image" id="standart-basic" label="Фото заставки" />
                 </div>
                 <div className={classes.divs}>

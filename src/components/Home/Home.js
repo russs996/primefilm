@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { clientContext } from '../../contexts/ClientContext';
 import Sidebar from './Sidebar';
+import Carousel from './carousel'
 
 const Home = () => {
     const history = useHistory()
@@ -30,6 +31,7 @@ const Home = () => {
     return (
         <div>
             <Grid>
+                <Carousel />
                 <Sidebar />
                 <List />
             </Grid>

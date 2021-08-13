@@ -11,6 +11,7 @@ import Home from './components/Home/Home';
 import ClientContextProvider from './contexts/ClientContext';
 import ProdDetail from './components/ProdDetail/ProdDetail';
 import Cart from './components/Cart/Cart';
+import PayCard from './components/PayCard/PayCard';
 
 
 console.log('asdasd')
@@ -25,11 +26,11 @@ const Routes = () => {
                             <Route exact path='/' component={Home} />
                             <Route exact path="/admin" component={AdminPanel} />
                             <Route exact path='/cart' component={Cart} />
-
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/admin" component={AdminPanel} />
                             <Route exact path="/product-detail/:id" component={ProdDetail} />
+                            <Route exact path="/pay-card" component={PayCard} />
                         </Switch>
                     </AdminContextProvider>
                 </ClientContextProvider>

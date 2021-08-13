@@ -1,4 +1,4 @@
-import { Link, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import React, { useContext, useEffect } from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import { Button, Typography } from '@material-ui/core';
 import { calcTotalPrice } from '../../helpers/CalcPrice';
 import { clientContext } from '../../contexts/ClientContext';
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   table: {
@@ -29,7 +30,7 @@ const Cart = () => {
     getCart()
   }, [])
   return (
-    <TableContainer component={Paper} className={classes.paper}>
+    <TableContainer component={Paper} className={classes.paper} style={{ heigth: '100vh' }}>
       <Table className={classes.table} aria-label="spanning table">
         <TableHead>
           <TableRow>
@@ -79,7 +80,7 @@ const Cart = () => {
           </TableRow>
         </TableBody>
       </Table>
-    </TableContainer>
+    </TableContainer >
   );
 };
 
